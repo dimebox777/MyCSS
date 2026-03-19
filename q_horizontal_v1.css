@@ -93,9 +93,17 @@
     border-color: #007b99 !important;
 }
 
-.mc.horizontal .mc-button-choices .choice:hover .choice-content {
-    color: #007b99 !important;
+
+/* ✅ Selected text colour */
+.mc.horizontal .mc-button-choices .choice.selected .choice-content,
+.mc.horizontal .mc-button-choices .choice input[type="radio"]:checked ~ .choice-label .choice-content {
+    color: #ffffff !important;
+    font-weight: 700 !important;
 }
+
+/*.mc.horizontal .mc-button-choices .choice:hover .choice-content {
+    color: #007b99 !important;
+}*/
 
 .mc.horizontal .mc-button-choices .choice.selected .choice-label {
     background-color: #003865 !important;
