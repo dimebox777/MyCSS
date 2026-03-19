@@ -67,7 +67,9 @@
 
     border: 1.5px solid #c4c0c0 !important;
     border-radius: 8px !important;
-    background-color: #f8fafc !important;
+   
+   /* background-color: #f8fafc !important;*/
+   
     cursor: pointer !important;
     transition: all 0.2s ease !important;
     text-align: center !important;
@@ -85,13 +87,14 @@
     font-size: 16px !important;         /* ✅ slightly larger text */
     /*font-size: 13px !important;*/
     font-weight: 500 !important;
-    color: #1e293b !important;
+    /*color: #1e293b !important;*/
 }
 
+/*
 .mc.horizontal .mc-button-choices .choice:hover .choice-label {
     background-color: #e0f2fe !important;
     border-color: #007b99 !important;
-}
+}*/
 
 
 /* ✅ Selected text colour */
