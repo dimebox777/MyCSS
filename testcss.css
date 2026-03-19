@@ -1,0 +1,131 @@
+/* ══════════════════════════════════════════════════════════════
+   MOBILE ONLY (max-width: 480px)
+   Desktop uses Qualtrics default look and feel
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+    /* Alternative approach using :is() */
+    /*:is(#question-QID1) .mc-button-choices .choices {
+    display: flex !important;
+    
+    }*/
+
+    /* Fallback — target via sibling ID */
+    /*[id="question-QID1"] .choices[role="radiogroup"] {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        
+    }*/
+
+    /* ── Choices container: force single horizontal row ── */
+    #question-QID1 .overflow-content .mc-button-choices .choices,
+    #question-QID1 .mc.horizontal .mc-button-choices .choices {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        gap: 4px !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        
+        /*padding-bottom: 2px !important;*/
+
+        padding-bottom: 0 !important;        /* ✅ remove bottom padding */
+
+        /* ✅ hide scrollbar on all browsers but keep scroll functionality */
+        scrollbar-width: none !important;           /* Firefox */
+        -ms-overflow-style: none !important;        /* IE / Edge */
+
+
+
+        grid-auto-columns: unset !important;
+        grid-gap: unset !important;
+    }
+
+
+    /* ✅ hide scrollbar on Chrome / Safari / WebKit */
+    #question-QID1 .overflow-content .mc-button-choices .choices::-webkit-scrollbar,
+    #question-QID1 .mc.horizontal .mc-button-choices .choices::-webkit-scrollbar {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+
+    /* ── Scrollbar ── */
+
+
+
+    /*.mc.horizontal .mc-button-choices .choices::-webkit-scrollbar {
+        height: 3px !important;
+    }
+    .mc.horizontal .mc-button-choices .choices::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1 !important;
+        border-radius: 4px !important;
+    }*/
+
+    /* ── Each choice button ── */
+    #question-QID1 .overflow-content .mc-button-choices .choices .choice,
+    #question-QID1 .mc.horizontal .mc-button-choices .choices .choice {
+        flex: 1 1 0 !important;
+        min-width: 26px !important;
+        max-width: 40px !important;
+        margin-bottom: 0 !important;
+        grid-row-start: unset !important;
+    }
+
+    /* ── Choice label ── */
+    #question-QID1 .overflow-content .mc-button-choices .choices .choice .choice-label,
+    #question-QID1 .mc.horizontal .mc-button-choices .choices .choice .choice-label {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 40px !important;
+        padding: 4px 2px !important;
+        border-radius: 6px !important;
+        text-align: center !important;
+        max-width: unset !important;
+        min-width: unset !important;
+    }
+
+    /* ── Hide radio button circle ── */
+    #question-QID1 .overflow-content .mc-button-choices .choice .radio-button,
+    #question-QID1 .mc.horizontal .mc-button-choices .choice .radio-button {
+        display: none !important;
+    }
+
+    /* ── Choice text ── */
+    #question-QID1 .overflow-content .mc-button-choices .choice .choice-content,
+    #question-QID1 .mc.horizontal .mc-button-choices .choice .choice-content {
+        padding-left: 0 !important;
+        justify-content: center !important;
+        font-size: 11px !important;
+    }
+
+    /* ── Next button full width on mobile ── */
+    #next-button {
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ── Ultra small screens (max-width: 360px) ── */
+@media (max-width: 360px) {
+
+    .mc.horizontal .mc-button-choices .choices .choice {
+        min-width: 20px !important;
+    }
+
+    .mc.horizontal .mc-button-choices .choices .choice .choice-label {
+        min-height: 36px !important;
+        border-radius: 4px !important;
+    }
+
+    .mc.horizontal .mc-button-choices .choice .choice-content {
+        font-size: 10px !important;
+    }
+}
