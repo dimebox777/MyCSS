@@ -1,0 +1,185 @@
+/* ══════════════════════════════════════════════════════════════
+   RATING BUTTONS — FORCE HORIZONTAL ON ALL SCREEN SIZES
+══════════════════════════════════════════════════════════════ */
+
+.mc.horizontal .mc-button-choices .choices {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    /*gap: 4px !important;*/
+    gap: 3px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 0 !important;       /* ✅ removed scrollbar space */
+
+    /*padding-bottom: 2px !important;*/
+    grid-auto-columns: unset !important;
+    grid-gap: unset !important;
+}
+
+.mc.horizontal .mc-button-choices .choices::-webkit-scrollbar {
+    display: none !important;           /* ✅ hide scrollbar */
+}
+
+/*.mc.horizontal .mc-button-choices .choices::-webkit-scrollbar {
+    height: 3px !important;
+}*/
+
+
+.mc.horizontal .mc-button-choices .choices::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1 !important;
+    border-radius: 4px !important;
+}
+
+.mc.horizontal .mc-button-choices .choices .choice {
+    /*flex: 1 1 0 !important;*/
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: 8.5% !important;
+
+     /* ✅ allow full shrink */    
+    /*min-width: 0 !important;*/
+
+    /* ✅ fill available space equally */        
+    /*max-width: 100% !important;*/
+
+    margin-bottom: 0 !important;
+    grid-row-start: unset !important;
+}
+
+.mc.horizontal .mc-button-choices .choices .choice .choice-label {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+
+    min-height: 56px !important;        /* ✅ increased from 44px */
+    padding: 8px 2px !important;        /* ✅ more vertical padding */
+
+    /*min-height: 44px !important;
+    padding: 6px 4px !important;*/
+    
+    /*border: 1.5px solid #cbd5e1 !important;*/
+
+    border: 1.5px solid #c4c0c0 !important;
+    border-radius: 8px !important;
+   
+   /* background-color: #f8fafc !important;*/
+   
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-align: center !important;
+    max-width: unset !important;
+    min-width: unset !important;
+}
+
+.mc.horizontal .mc-button-choices .choice .radio-button {
+    display: none !important;
+}
+
+.mc.horizontal .mc-button-choices .choice .choice-content {
+    padding-left: 0 !important;
+    justify-content: center !important;
+    font-size: 16px !important;         /* ✅ slightly larger text */
+    /*font-size: 13px !important;*/
+    font-weight: 500 !important;
+    /*color: #1e293b !important;*/
+}
+
+/*
+.mc.horizontal .mc-button-choices .choice:hover .choice-label {
+    background-color: #e0f2fe !important;
+    border-color: #007b99 !important;
+}*/
+
+
+/* ✅ Selected text colour */
+/*
+.mc.horizontal .mc-button-choices .choice.selected .choice-content,
+.mc.horizontal .mc-button-choices .choice input[type="radio"]:checked ~ .choice-label .choice-content {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+*/
+
+/*.mc.horizontal .mc-button-choices .choice:hover .choice-content {
+    color: #007b99 !important;
+}*/
+
+/*
+.mc.horizontal .mc-button-choices .choice.selected .choice-label {
+    background-color: #003865 !important;
+    border-color: #003865 !important;
+    box-shadow: 0 2px 6px rgba(0, 56, 101, 0.25) !important;
+    
+}
+*/
+
+
+
+/*.choice:has(input[type="radio"]:checked)*/
+
+.mc.horizontal .mc-button-choices .choices .choice:has(input[type="radio"]:checked) .choice-label {
+    background-color: #003865 !important;
+    border-color: #003865 !important;
+    box-shadow: 0 2px 6px rgba(0, 56, 101, 0.25) !important;
+}
+
+
+/* ✅ Selected text colour */
+
+.mc.horizontal .mc-button-choices .choices .choice:has(input[type="radio"]:checked) .choice-content {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+
+/* ✅ Keep selected state on hover */
+
+.mc.horizontal .mc-button-choices .choices .choice:has(input[type="radio"]:checked) .choice-label:hover {
+    background-color: #003865 !important;
+    border-color: #003865 !important;
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE & SMALL SCREENS
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    .mc.horizontal .mc-button-choices .choices .choice {
+        min-width: 26px !important;
+        max-width: 40px !important;
+    }
+    .mc.horizontal .mc-button-choices .choices .choice .choice-label {
+        min-height: 40px !important;
+        padding: 4px 2px !important;
+        border-radius: 6px !important;
+    }
+    .mc.horizontal .mc-button-choices .choice .choice-content {
+        font-size: 11px !important;
+    }
+    #next-button {
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .mc.horizontal .mc-button-choices .choices .choice {
+        min-width: 20px !important;
+    }
+    .mc.horizontal .mc-button-choices .choices .choice .choice-label {
+        min-height: 36px !important;
+        border-radius: 4px !important;
+    }
+    .mc.horizontal .mc-button-choices .choice .choice-content {
+        font-size: 10px !important;
+    }
+}
+
+
