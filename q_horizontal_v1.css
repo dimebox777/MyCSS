@@ -105,20 +105,20 @@
 }
 
 
-.mc.horizontal .mc-button-choices .choices .choice.selected .choice-label {
+.mc.horizontal .mc-button-choices .choices .choice:has(input[type="radio"]:checked) .choice-label {
     background-color: #003865 !important;
     border-color: #003865 !important;
     box-shadow: 0 2px 6px rgba(0, 56, 101, 0.25) !important;
 }
 
 /* ✅ Selected text colour */
-.mc.horizontal .mc-button-choices .choices .choice.selected .choice-content {
+.mc.horizontal .mc-button-choices .choices .choice:has(input[type="radio"]:checked) .choice-content {
     color: #ffffff !important;
     font-weight: 700 !important;
 }
 
 /* ✅ Keep selected state on hover */
-.mc.horizontal .mc-button-choices .choices .choice.selected .choice-label:hover {
+.mc.horizontal .mc-button-choices .choices .choice:has(input[type="radio"]:checked) .choice-label:hover {
     background-color: #003865 !important;
     border-color: #003865 !important;
 }
